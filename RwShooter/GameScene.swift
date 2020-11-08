@@ -32,6 +32,35 @@ class GameScene: SKScene {
         ))
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let touchesLocation = touch.location(in: self)
+        
+        let projectile = SKShapeNode(circleOfRadius: 10.0)
+        projectile.position = player!.position
+        
+        let offset = touchesLocation - projectile.position
+        
+        if offset.x < 0 {
+            return
+        }
+        
+        projectile.fillColor = .red
+        addChild(projectile)
+        
+        let direction = offset.normalized()
+        let shootAmount = direction * 1000
+        let realDest = shootAmount + projectile.position
+        
+        let actionMove = SKAction.move(to: realDest, duration: 2.0)
+        let actionMoveDone = SKAction.removeFromParent()
+        
+        projectile.run(SKAction.sequence([actionMove, actionMoveDone]))
+    }
+    
     private func addMonster() {
         let monster = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.monsterSpriteWidth, height: monsterSpriteHeight), cornerRadius: 10.0)
         let actualY = random(min: monsterSpriteHeight / 2.0, max: size.height - monsterSpriteHeight / 2.0)
