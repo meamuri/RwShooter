@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		EB48E555255867D10088CFCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48E554255867D10088CFCB /* AppDelegate.swift */; };
-		EB48E557255867D10088CFCB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EB48E556255867D10088CFCB /* GameScene.sks */; };
 		EB48E559255867D10088CFCB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EB48E558255867D10088CFCB /* Actions.sks */; };
 		EB48E55B255867D10088CFCB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48E55A255867D10088CFCB /* GameScene.swift */; };
 		EB48E55D255867D10088CFCB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48E55C255867D10088CFCB /* GameViewController.swift */; };
 		EB48E560255867D10088CFCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB48E55E255867D10088CFCB /* Main.storyboard */; };
 		EB48E562255867D50088CFCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB48E561255867D50088CFCB /* Assets.xcassets */; };
+		EB48E56C25586DF70088CFCB /* CGPoint+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48E56B25586DF70088CFCB /* CGPoint+Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EB48E551255867D10088CFCB /* RwShooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RwShooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB48E554255867D10088CFCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB48E556255867D10088CFCB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		EB48E558255867D10088CFCB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		EB48E55A255867D10088CFCB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EB48E55C255867D10088CFCB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EB48E55F255867D10088CFCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB48E561255867D50088CFCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB48E563255867D50088CFCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB48E56B25586DF70088CFCB /* CGPoint+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Math.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				EB48E554255867D10088CFCB /* AppDelegate.swift */,
-				EB48E556255867D10088CFCB /* GameScene.sks */,
 				EB48E558255867D10088CFCB /* Actions.sks */,
 				EB48E55A255867D10088CFCB /* GameScene.swift */,
+				EB48E56B25586DF70088CFCB /* CGPoint+Math.swift */,
 				EB48E55C255867D10088CFCB /* GameViewController.swift */,
 				EB48E55E255867D10088CFCB /* Main.storyboard */,
 				EB48E561255867D50088CFCB /* Assets.xcassets */,
@@ -128,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB48E560255867D10088CFCB /* Main.storyboard in Resources */,
-				EB48E557255867D10088CFCB /* GameScene.sks in Resources */,
 				EB48E562255867D50088CFCB /* Assets.xcassets in Resources */,
 				EB48E559255867D10088CFCB /* Actions.sks in Resources */,
 			);
@@ -143,6 +142,7 @@
 			files = (
 				EB48E55B255867D10088CFCB /* GameScene.swift in Sources */,
 				EB48E55D255867D10088CFCB /* GameViewController.swift in Sources */,
+				EB48E56C25586DF70088CFCB /* CGPoint+Math.swift in Sources */,
 				EB48E555255867D10088CFCB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
