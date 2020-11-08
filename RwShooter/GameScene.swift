@@ -11,6 +11,8 @@ import GameplayKit
 class GameScene: SKScene {
     
     private var player: SKNode?
+    private var monstersDestroyed = 0
+    private let monstersLimitForWin = 5
     
     override func didMove(to view: SKView) {
         
@@ -92,9 +94,14 @@ class GameScene: SKScene {
     }
     
     private func projectileDidCollideWithMonster(projectile: SKNode, monster: SKNode) {
-        print("hit")
         projectile.removeFromParent()
         monster.removeFromParent()
+        monstersDestroyed += 1
+        if monstersDestroyed > monstersLimitForWin {
+          let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+          let gameOverScene = GameOverScene(size: self.size, won: true)
+          view?.presentScene(gameOverScene, transition: reveal)
+        }
     }
     
     private func addMonster() {
@@ -113,7 +120,13 @@ class GameScene: SKScene {
         let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
         let actionMove = SKAction.move(to: CGPoint(x: -monsterSpriteWidth/2.0, y: actualY), duration: TimeInterval(actualDuration))
         let actionMoveDone = SKAction.removeFromParent()
-        monster.run(SKAction.sequence([actionMove, actionMoveDone]))
+        let loseAction = SKAction.run() { [weak self] in
+          guard let `self` = self else { return }
+          let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+          let gameOverScene = GameOverScene(size: self.size, won: false)
+          self.view?.presentScene(gameOverScene, transition: reveal)
+        }
+        monster.run(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
     }
     
     private func random() -> CGFloat {
