@@ -1,5 +1,5 @@
 # Simple shooter game
 
-Inspired by [tutorial](https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners)
+Inspired by [tutorial](https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners).
 
-Sprites replaced with simple shapes
+Sprites are replaced with simple shapes.
